@@ -8,6 +8,9 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 def google_auth(request):
     return render(request, 'users/google_auth.html',)
 
+def home(request):
+    return render(request, 'users/home.html',)
+
 @login_required
 def profile(request):
     if request.method == 'POST':
@@ -16,7 +19,7 @@ def profile(request):
         if u_form.is_valid() and p_form.is_valid() :
             u_form.save()
             p_form.save()
-            messages.success(request, f'Account updated!')
+            messages.success(request,f'Account updated!')
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance=request.user)

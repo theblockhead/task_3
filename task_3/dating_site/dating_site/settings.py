@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
+    'crispy_forms',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -160,3 +161,5 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
