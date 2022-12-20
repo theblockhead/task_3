@@ -25,5 +25,7 @@ urlpatterns = [
     path('google_auth/', include('users.urls')),
     path('accounts/', include('allauth.urls')),
     path('profile/', user_views.profile, name='profile'),
+    path('', user_views.home, name="home"),
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
